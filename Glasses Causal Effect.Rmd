@@ -31,6 +31,38 @@ library(lubridate)
 library(stargazer)
 library(gridExtra)
 ```
+```{r}
+smart <- fread("survey.csv")
+```
+```{r}
+skimr::skim(smart)
+```
+```{r}
+head(smart, 2)
+```
+```{r}
+smart=smart%>%select(-Status, -DistributionChannel, -RecipientEmail, -RecipientFirstName, -RecipientLastName, -ExternalReference, -UserLanguage)
+```
+```{r}
+smart=smart%>%filter(Finished=="True")%>%filter(Progress==100)
+```
+```{r}
+smart=smart%>%select(-Progress, -Finished)
+```
+```{r}
+length(unique(smart$ResponseId))
+length(unique(smart$IPAddress))
+```
+So, some people take more than once, we only want to keep each person once.
+```{r}
+smart=smart%>%distinct(IPAddress, .keep_all = TRUE)
+```
+```{r}
+dim(smart)
+```
+
+
+
 We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
 ```{r}
 guess <- read_csv("glasses.csv")
