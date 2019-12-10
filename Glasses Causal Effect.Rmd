@@ -1,0 +1,45 @@
+---
+title: "Glasses For Letter Grade Impression"
+subtitle: BA830 - Fall 2019
+author: "team 7"
+date: "12/13/2019"
+output: pdf_document
+---
+
+**Team 7 Members:** Kunpeng Huang, Yoki Liu, Lyufan Pan, Yunlei Zhou, Jiayuan Zou, Sherry Zuo
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen=1, digits=8)
+```
+
+Key Elements of Project Writeup
+When you write up your project paper, there is no predefined format. However, these factors must be included:
+a. Your causal question of interest.  
+b. Your experimental design and what data you collected.  
+c. Why you chose the experiment design.  
+d. Summary statistics about the data.  
+e. Treatment effects.  
+f. Limitations of your study.  
+Make sure the paper is well-written and that there are figures and tables that are easy to understand.
+
+```{r}
+library(data.table)
+library(tidyverse)
+library(lfe)
+library(lubridate)
+library(stargazer)
+library(gridExtra)
+```
+We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
+```{r}
+guess <- read_csv("glasses.csv")
+```
+```{r}
+names(guess)
+```
+```{r}
+names(guess) <- "purpose_guess"
+```
+
+
