@@ -31,24 +31,31 @@ library(lubridate)
 library(stargazer)
 library(gridExtra)
 ```
+
 ```{r}
 smart <- fread("survey.csv")
 ```
+
 ```{r}
 skimr::skim(smart)
 ```
+
 ```{r}
 head(smart, 2)
 ```
+
 ```{r}
 smart=smart%>%select(-Status, -DistributionChannel, -RecipientEmail, -RecipientFirstName, -RecipientLastName, -ExternalReference, -UserLanguage)
 ```
+
 ```{r}
 smart=smart%>%filter(Finished=="True")%>%filter(Progress==100)
 ```
+
 ```{r}
 smart=smart%>%select(-Progress, -Finished)
 ```
+
 ```{r}
 length(unique(smart$ResponseId))
 length(unique(smart$IPAddress))
@@ -59,8 +66,43 @@ smart=smart%>%distinct(IPAddress, .keep_all = TRUE)
 ```
 ```{r}
 dim(smart)
+(smart$`Q4.1_First Click`)
 ```
 
+```{r}
+# Add treatment/control dummy variable:
+smart2 = smart %>% 
+  mutate(Treatment = ifelse(`Q4.1_First Click`=="", FALSE, TRUE))
+
+# Variable selection:
+smart_cleaned = smart2 %>% 
+  select(-c(`Q2.1_First Click`:`Q2.1_Click Count`, `Q3.1_First Click`:`Q3.1_Click Count`, 
+            `Q4.1_First Click`:`Q4.1_Click Count`, Q48, IPAddress, StartDate, EndDate, ResponseId)) %>% 
+  select(1:8, 
+         class_baseline=Q2.3, personality_baseline=Q2.4, grade_baseline=Q2.5, 
+         gender_p=Q5.1, class_p=Q5.2, personality_p=Q5.3, grade_p=Q5.4,
+         everything())
+```
+
+
+```{r}
+control = smart_cleaned %>% 
+  filter(Treatment == F) %>% 
+  select(-c(Q4.3:Q4.5), class=Q3.3, personality=Q3.4, grade=Q3.5)
+```
+
+```{r}
+treatment = smart_cleaned %>% 
+  filter(Treatment == T) %>% 
+  select(-c(Q3.3:Q3.5), class = Q4.3, personality=Q4.4, grade=Q4.5) 
+
+# cbind(control, treatment)
+
+```
+
+
+
+###############################################################################
 
 
 We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
@@ -72,6 +114,10 @@ names(guess)
 ```
 ```{r}
 names(guess) <- "purpose_guess"
+```
+
+```{r}
+
 ```
 
 
