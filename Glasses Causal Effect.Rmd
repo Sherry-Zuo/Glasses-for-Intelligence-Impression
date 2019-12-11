@@ -30,6 +30,7 @@ library(lfe)
 library(lubridate)
 library(stargazer)
 library(gridExtra)
+library(naniar)
 ```
 
 ```{r}
@@ -65,11 +66,6 @@ So, some people take more than once, we only want to keep each person once.
 smart=smart%>%distinct(IPAddress, .keep_all = TRUE)
 ```
 ```{r}
-dim(smart)
-(smart$`Q4.1_First Click`)
-```
-
-```{r}
 # Add treatment/control dummy variable:
 smart2 = smart %>% 
   mutate(Treatment = ifelse(`Q4.1_First Click`=="", FALSE, TRUE))
@@ -84,21 +80,32 @@ smart_cleaned = smart2 %>%
          everything())
 ```
 
-
 ```{r}
 control = smart_cleaned %>% 
   filter(Treatment == F) %>% 
   select(-c(Q4.3, Q4.4, Q4.5), class=Q3.3, personality=Q3.4, grade=Q3.5)
-```
 
-```{r}
 treatment = smart_cleaned %>% 
   filter(Treatment == T) %>% 
   select(-c(Q3.3, Q3.4, Q3.5), class = Q4.3, personality=Q4.4, grade=Q4.5) 
 
 data = rbind(control, treatment)
-write_csv(data, "data.csv")
+#write_csv(data, "data.csv")
 ```
+```{r}
+data2<-read.csv("data.csv", na.strings = c("", "NA"))
+```
+```{r}
+data2 = na.omit(data2)
+```
+```{r}
+#write_csv(data2, "cleaned_data.csv")
+```
+```{r}
+dim(data2)
+```
+
+
 
 
 
@@ -116,8 +123,6 @@ names(guess)
 names(guess) <- "purpose_guess"
 ```
 
-```{r}
 
-```
 
 

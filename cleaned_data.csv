@@ -1,0 +1,206 @@
+Duration..in.seconds.,RecordedDate,LocationLatitude,LocationLongitude,class_baseline,personality_baseline,grade_baseline,class,gender_p,class_p,personality_p,grade_p,personality,grade,Treatment
+62,2019-12-05 15:27:49,37.751007080078125,-97.8219985961914,Sophomore,Logical,A-(3.5-3.75),Senior,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+44,2019-12-05 15:30:52,42.346405029296875,-71.097503662109375,Junior,Logical,B(3.0-3.25),Senior,Female,Graduates,Logical,A-(3.5-3.75),Emotional,A-(3.5-3.75),FALSE
+54,2019-12-05 15:31:20,42.346405029296875,-71.097503662109375,Senior,Logical,B+(3.25-3.5),Sophomore,Male,Graduates,Logical,A-(3.5-3.75),Emotional,B(3.0-3.25),FALSE
+47,2019-12-05 15:33:17,51.453399658203125,-2.5077056884765625,Sophomore,Logical,A-(3.5-3.75),Junior,Male,Senior,Prefer not to say,B(3.0-3.25),Emotional,B-(2.75-3.0),FALSE
+66,2019-12-05 15:36:26,42.346405029296875,-71.097503662109375,Senior,Emotional,B(3.0-3.25),Graduates,Male,Graduates,Logical,B+(3.25-3.5),Logical,B+(3.25-3.5),FALSE
+62,2019-12-05 15:36:39,29.722793579101562,-95.42510223388672,Graduates,Emotional,B(3.0-3.25),Junior,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+77,2019-12-05 15:39:45,47.60920715332031,-122.33140563964844,Freshman,Emotional,A-(3.5-3.75),Freshman,Male,Other,Logical,A-(3.5-3.75),Emotional,B(3.0-3.25),FALSE
+65,2019-12-05 15:41:11,42.346405029296875,-71.097503662109375,Graduates,Emotional,B+(3.25-3.5),Graduates,Male,Graduates,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+46,2019-12-05 15:42:55,39.95869445800781,-82.99870300292969,Graduates,Emotional,A(3.75-4.0),Graduates,Male,Graduates,Prefer not to say,B(3.0-3.25),Logical,A(3.75-4.0),FALSE
+51,2019-12-05 15:44:46,43.18060302734375,-77.59480285644531,Junior,Logical,A-(3.5-3.75),Senior,Female,Senior,Logical,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+73,2019-12-05 15:45:40,40.789398193359375,-73.58550262451172,Graduates,Emotional,B+(3.25-3.5),Graduates,Male,Graduates,Logical,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+65,2019-12-05 15:46:44,40.67399597167969,-73.97010040283203,Senior,Emotional,A-(3.5-3.75),Freshman,Female,Senior,Logical,A-(3.5-3.75),Emotional,B(3.0-3.25),FALSE
+121,2019-12-05 15:47:22,42.3634033203125,-71.07129669189453,Senior,Logical,A-(3.5-3.75),Sophomore,Female,Graduates,Logical,B(3.0-3.25),Emotional,B+(3.25-3.5),FALSE
+51,2019-12-05 15:49:24,42.34979248046875,-71.07649993896484,Graduates,Emotional,B+(3.25-3.5),Sophomore,Female,Graduates,Prefer not to say,A-(3.5-3.75),Emotional,A-(3.5-3.75),FALSE
+79,2019-12-05 15:52:53,37.751007080078125,-97.8219985961914,Junior,Logical,A-(3.5-3.75),Freshman,Male,Graduates,Logical,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+87,2019-12-05 15:54:32,48.85429382324219,2.3527069091796875,Graduates,Logical,B+(3.25-3.5),Junior,Female,Graduates,Logical,B+(3.25-3.5),Emotional,B+(3.25-3.5),FALSE
+1305,2019-12-05 15:56:16,40.86219787597656,-73.89019775390625,Graduates,Emotional,B(3.0-3.25),Senior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+86,2019-12-05 15:58:26,42.346405029296875,-71.097503662109375,Sophomore,Emotional,B+(3.25-3.5),Senior,Female,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+59,2019-12-05 15:58:53,42.46519470214844,-83.37129974365234,Freshman,Emotional,C+(2.5-2.75),Senior,Female,Graduates,Logical,A-(3.5-3.75),Emotional,B-(2.75-3.0),FALSE
+93,2019-12-05 15:58:56,42.297393798828125,-71.07219696044922,Sophomore,Emotional,B+(3.25-3.5),Junior,Female,Graduates,Prefer not to say,B+(3.25-3.5),Logical,A-(3.5-3.75),FALSE
+74,2019-12-05 16:05:45,48.85820007324219,2.3386993408203125,Freshman,Emotional,A-(3.5-3.75),Senior,Female,Graduates,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+110,2019-12-05 16:08:11,53.38310241699219,-1.4600982666015625,Graduates,Logical,A-(3.5-3.75),Junior,Male,Graduates,Logical,B(3.0-3.25),Emotional,B-(2.75-3.0),FALSE
+74,2019-12-05 16:18:51,-27.47320556640625,153.02151489257812,Graduates,Logical,B+(3.25-3.5),Graduates,Female,Other,Prefer not to say,B-(2.75-3.0),Logical,B+(3.25-3.5),FALSE
+54,2019-12-05 16:20:08,42.36399841308594,-71.02649688720703,Graduates,Logical,A-(3.5-3.75),Junior,Female,Graduates,Emotional,A(3.75-4.0),Emotional,B(3.0-3.25),FALSE
+65,2019-12-05 16:31:05,42.33990478515625,-71.12449645996094,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Logical,Prefer not to say,Logical,A-(3.5-3.75),FALSE
+70,2019-12-05 16:36:55,39.95869445800781,-82.99870300292969,Graduates,Emotional,B(3.0-3.25),Freshman,Male,Junior,Emotional,B(3.0-3.25),Logical,B+(3.25-3.5),FALSE
+202,2019-12-05 16:41:24,42.3634033203125,-71.07129669189453,Junior,Logical,B+(3.25-3.5),Graduates,Female,Junior,Emotional,B+(3.25-3.5),Logical,A-(3.5-3.75),FALSE
+50,2019-12-05 16:41:43,42.34269714355469,-71.09220123291016,Graduates,Logical,A(3.75-4.0),Senior,Female,Graduates,Prefer not to say,A(3.75-4.0),Logical,A(3.75-4.0),FALSE
+86,2019-12-05 16:54:54,41.30540466308594,-105.59030151367188,PhD,Logical,A(3.75-4.0),PhD,Male,Sophomore,Logical,A(3.75-4.0),Logical,A(3.75-4.0),FALSE
+111,2019-12-05 17:00:03,42.05140686035156,-93.69080352783203,Freshman,Logical,A-(3.5-3.75),Freshman,Female,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+55,2019-12-05 17:01:02,42.34739685058594,-71.158203125,Junior,Logical,A-(3.5-3.75),Junior,Female,Graduates,Emotional,B+(3.25-3.5),Emotional,A-(3.5-3.75),FALSE
+157,2019-12-05 17:18:56,40.80000305175781,-73.97630310058594,Junior,Logical,A-(3.5-3.75),Sophomore,Female,Other,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+66,2019-12-05 17:43:17,40.746307373046875,-74.1552963256836,Junior,Emotional,B(3.0-3.25),Sophomore,Female,Graduates,Prefer not to say,B(3.0-3.25),Logical,A(3.75-4.0),FALSE
+216,2019-12-05 18:34:02,35.5928955078125,112.2493896484375,Graduates,Logical,A-(3.5-3.75),Sophomore,Female,Graduates,Logical,A-(3.5-3.75),Logical,B+(3.25-3.5),FALSE
+118,2019-12-05 18:54:35,29.556900024414062,106.5531005859375,Graduates,Emotional,B-(2.75-3.0),Freshman,Male,Graduates,Logical,A-(3.5-3.75),Logical,B+(3.25-3.5),FALSE
+83,2019-12-05 19:03:16,38.643798828125,-90.53009796142578,Graduates,Logical,A-(3.5-3.75),Senior,Male,Graduates,Logical,B(3.0-3.25),Emotional,B-(2.75-3.0),FALSE
+85,2019-12-05 19:08:22,33.794097900390625,-84.32499694824219,Junior,Logical,A-(3.5-3.75),Freshman,Female,Graduates,Emotional,B+(3.25-3.5),Emotional,B+(3.25-3.5),FALSE
+119,2019-12-05 19:14:02,32.06170654296875,118.77780151367188,Graduates,Logical,B+(3.25-3.5),PhD,Female,Graduates,Logical,A(3.75-4.0),Logical,B+(3.25-3.5),FALSE
+157,2019-12-05 19:17:02,31.304092407226562,120.59539794921875,PhD,Logical,A-(3.5-3.75),Graduates,Male,Graduates,Logical,B+(3.25-3.5),Emotional,B+(3.25-3.5),FALSE
+89,2019-12-05 19:21:01,33.78550720214844,-84.36119842529297,Senior,Emotional,A(3.75-4.0),Junior,Female,Graduates,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+55,2019-12-05 19:25:58,39.928802490234375,116.38888549804688,Sophomore,Emotional,B+(3.25-3.5),Junior,Female,Other,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+167,2019-12-05 19:35:02,24.47979736328125,118.0819091796875,Graduates,Logical,B+(3.25-3.5),Freshman,Female,Sophomore,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+105,2019-12-05 19:35:57,32.06170654296875,118.77780151367188,Senior,Logical,B+(3.25-3.5),Sophomore,Male,Senior,Prefer not to say,B(3.0-3.25),Logical,A-(3.5-3.75),FALSE
+64,2019-12-05 19:37:37,33.82310485839844,-84.32579803466797,Junior,Logical,A-(3.5-3.75),Senior,Female,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),FALSE
+222,2019-12-05 19:47:25,23.030807495117188,113.7174072265625,Graduates,Logical,A(3.75-4.0),Senior,Female,Graduates,Emotional,C(2.25-2.5),Emotional,B(3.0-3.25),FALSE
+81,2019-12-05 19:50:15,42.34739685058594,-71.158203125,Junior,Logical,A-(3.5-3.75),Senior,Female,Graduates,Logical,B(3.0-3.25),Logical,A-(3.5-3.75),FALSE
+82,2019-12-05 19:58:11,33.808807373046875,-84.28150177001953,Graduates,Logical,B(3.0-3.25),Senior,Female,Graduates,Emotional,A(3.75-4.0),Emotional,B-(2.75-3.0),FALSE
+64,2019-12-05 20:11:05,42.346405029296875,-71.097503662109375,Sophomore,Logical,A(3.75-4.0),Freshman,Female,Graduates,Prefer not to say,Prefer not to say,Emotional,B(3.0-3.25),FALSE
+93,2019-12-05 20:12:45,40.81059265136719,111.65219116210938,Sophomore,Emotional,A-(3.5-3.75),Freshman,Female,Other,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+99,2019-12-05 20:22:07,42.03599548339844,-93.46520233154297,Graduates,Logical,A-(3.5-3.75),Sophomore,Male,Senior,Prefer not to say,B(3.0-3.25),Logical,A-(3.5-3.75),FALSE
+82,2019-12-05 20:51:20,42.34979248046875,-71.07649993896484,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Prefer not to say,B(3.0-3.25),Emotional,B+(3.25-3.5),FALSE
+174,2019-12-05 21:29:02,24.47979736328125,118.0819091796875,Senior,Logical,A-(3.5-3.75),Junior,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+61,2019-12-05 21:54:04,42.34739685058594,-71.158203125,Graduates,Logical,B+(3.25-3.5),Senior,Female,Graduates,Emotional,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+73,2019-12-05 23:11:17,33.82310485839844,-84.32579803466797,Sophomore,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+17000,2019-12-06 00:24:24,31.044906616210938,121.40121459960938,Graduates,Emotional,A-(3.5-3.75),Freshman,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+146,2019-12-06 01:37:56,30.666702270507812,104.06671142578125,Graduates,Logical,A-(3.5-3.75),Junior,Female,Graduates,Logical,B+(3.25-3.5),Logical,A-(3.5-3.75),FALSE
+218,2019-12-06 03:33:55,31.044906616210938,121.40121459960938,Junior,Emotional,A-(3.5-3.75),Freshman,Female,Junior,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+120,2019-12-06 03:44:11,39.928802490234375,116.38888549804688,Junior,Logical,A-(3.5-3.75),Sophomore,Female,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+78,2019-12-06 04:18:00,31.383499145507812,120.95199584960938,Sophomore,Logical,A(3.75-4.0),Freshman,Male,Sophomore,Prefer not to say,B(3.0-3.25),Emotional,B(3.0-3.25),FALSE
+121,2019-12-06 04:18:54,48.85820007324219,2.3386993408203125,Graduates,Logical,B+(3.25-3.5),Sophomore,Male,Junior,Logical,Prefer not to say,Logical,C+(2.5-2.75),FALSE
+81,2019-12-06 04:23:03,31.304092407226562,120.59539794921875,Sophomore,Emotional,B+(3.25-3.5),Freshman,Female,Senior,Prefer not to say,B(3.0-3.25),Emotional,C+(2.5-2.75),FALSE
+125,2019-12-06 04:34:40,39.928802490234375,116.38888549804688,Graduates,Logical,A(3.75-4.0),Freshman,Male,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),FALSE
+125,2019-12-06 05:27:59,31.304092407226562,120.59539794921875,Sophomore,Emotional,A(3.75-4.0),Senior,Female,Sophomore,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+124,2019-12-06 05:45:12,42.24009704589844,125.71719360351562,Sophomore,Logical,B+(3.25-3.5),Freshman,Female,Graduates,Emotional,B+(3.25-3.5),Emotional,B-(2.75-3.0),FALSE
+35,2019-12-06 06:14:48,36.06599426269531,120.369384765625,Sophomore,Logical,B(3.0-3.25),Junior,Prefer not to say,Graduates,Emotional,A-(3.5-3.75),Logical,B+(3.25-3.5),FALSE
+102,2019-12-06 06:18:41,31.304092407226562,120.59539794921875,Graduates,Emotional,B(3.0-3.25),Junior,Female,Graduates,Emotional,Prefer not to say,Logical,B(3.0-3.25),FALSE
+305,2019-12-06 07:44:05,31.044906616210938,121.40121459960938,Junior,Emotional,A-(3.5-3.75),Senior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+102,2019-12-06 07:46:45,42.346405029296875,-71.097503662109375,Junior,Logical,A(3.75-4.0),Senior,Female,Graduates,Logical,A(3.75-4.0),Emotional,B+(3.25-3.5),FALSE
+93,2019-12-06 08:28:36,42.346405029296875,-71.097503662109375,Junior,Emotional,A(3.75-4.0),Junior,Male,Graduates,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+40,2019-12-06 10:26:31,42.460205078125,-83.1343002319336,Graduates,Logical,A-(3.5-3.75),Graduates,Male,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),FALSE
+185,2019-12-06 10:53:10,30.666702270507812,104.06671142578125,Graduates,Logical,A-(3.5-3.75),Sophomore,Female,Graduates,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),FALSE
+143,2019-12-06 11:04:32,42.3634033203125,-71.07129669189453,Junior,Emotional,B(3.0-3.25),Sophomore,Prefer not to say,Graduates,Prefer not to say,A(3.75-4.0),Emotional,B-(2.75-3.0),FALSE
+87,2019-12-06 11:06:14,42.365997314453125,-71.22709655761719,Graduates,Emotional,A-(3.5-3.75),Graduates,Female,Freshman,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),FALSE
+58,2019-12-06 11:17:39,42.310394287109375,-71.27410125732422,Junior,Emotional,A-(3.5-3.75),Freshman,Female,Other,Emotional,B+(3.25-3.5),Logical,A-(3.5-3.75),FALSE
+53,2019-12-06 11:34:19,42.297393798828125,-71.07219696044922,Junior,Logical,A-(3.5-3.75),Sophomore,Female,Sophomore,Prefer not to say,B(3.0-3.25),Logical,B+(3.25-3.5),FALSE
+101,2019-12-06 12:05:49,42.346405029296875,-71.097503662109375,Graduates,Emotional,B+(3.25-3.5),Senior,Male,Graduates,Prefer not to say,Prefer not to say,Logical,B(3.0-3.25),FALSE
+111,2019-12-06 12:24:32,42.346405029296875,-71.097503662109375,Sophomore,Logical,B(3.0-3.25),Junior,Male,Graduates,Emotional,B(3.0-3.25),Logical,A-(3.5-3.75),FALSE
+56,2019-12-06 12:33:11,42.346405029296875,-71.097503662109375,Junior,Logical,A-(3.5-3.75),Junior,Female,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+111,2019-12-06 12:48:37,22.533294677734375,114.13330078125,Junior,Emotional,A-(3.5-3.75),Senior,Female,Senior,Prefer not to say,B+(3.25-3.5),Logical,B+(3.25-3.5),FALSE
+79,2019-12-06 13:07:50,42.03599548339844,-93.46520233154297,Graduates,Logical,B(3.0-3.25),Junior,Male,Senior,Logical,B(3.0-3.25),Logical,B(3.0-3.25),FALSE
+142,2019-12-06 13:44:43,47.66310119628906,-122.30290222167969,Senior,Logical,A-(3.5-3.75),Sophomore,Prefer not to say,Junior,Prefer not to say,Prefer not to say,Logical,A-(3.5-3.75),FALSE
+111,2019-12-06 15:25:50,42.33880615234375,-71.072601318359375,Graduates,Logical,A-(3.5-3.75),Sophomore,Female,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),FALSE
+74,2019-12-07 13:10:19,42.3634033203125,-71.07129669189453,Sophomore,Logical,A-(3.5-3.75),Senior,Female,Sophomore,Emotional,A-(3.5-3.75),Logical,B+(3.25-3.5),FALSE
+117,2019-12-07 13:34:32,35.36639404296875,-77.9220962524414,Freshman,Emotional,B+(3.25-3.5),Junior,Male,Other,Logical,A(3.75-4.0),Logical,B(3.0-3.25),FALSE
+92,2019-12-07 13:37:50,34.06480407714844,-118.08599853515625,Freshman,Logical,A-(3.5-3.75),Freshman,Male,Other,Logical,C+(2.5-2.75),Emotional,B+(3.25-3.5),FALSE
+73,2019-12-07 13:50:58,30.377304077148438,-97.70999908447266,Senior,Emotional,B-(2.75-3.0),PhD,Female,Graduates,Logical,B+(3.25-3.5),Logical,A(3.75-4.0),FALSE
+95,2019-12-07 13:51:21,42.34919738769531,-71.06580352783203,Senior,Logical,B+(3.25-3.5),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,C+(2.5-2.75),FALSE
+89,2019-12-07 13:53:53,39.51069641113281,-84.7426986694336,Junior,Logical,A-(3.5-3.75),Senior,Male,Sophomore,Logical,A(3.75-4.0),Logical,B+(3.25-3.5),FALSE
+103,2019-12-07 13:55:11,51.49639892578125,-0.122406005859375,Graduates,Logical,B+(3.25-3.5),Senior,Female,Graduates,Logical,B(3.0-3.25),Logical,B(3.0-3.25),FALSE
+260,2019-12-07 13:56:18,43.476593017578125,-96.7052001953125,Junior,Logical,A(3.75-4.0),Freshman,Male,Other,Prefer not to say,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+73,2019-12-07 14:05:24,34.42649841308594,-119.86309814453125,Freshman,Emotional,A-(3.5-3.75),Freshman,Male,Senior,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+65,2019-12-07 15:01:07,42.03729248046875,-93.60050201416016,Senior,Logical,A-(3.5-3.75),Sophomore,Male,Senior,Emotional,C+(2.5-2.75),Emotional,B(3.0-3.25),FALSE
+101,2019-12-07 15:12:07,42.05140686035156,-93.69080352783203,Graduates,Logical,A-(3.5-3.75),Sophomore,Female,Senior,Prefer not to say,B(3.0-3.25),Logical,A-(3.5-3.75),FALSE
+57,2019-12-07 15:37:14,38.714202880859375,-90.2759017944336,Graduates,Emotional,A(3.75-4.0),Senior,Female,Graduates,Logical,A-(3.5-3.75),Emotional,A-(3.5-3.75),FALSE
+67,2019-12-07 15:39:58,42.03729248046875,-93.60050201416016,Graduates,Logical,A-(3.5-3.75),Junior,Female,Senior,Emotional,A-(3.5-3.75),Emotional,A-(3.5-3.75),FALSE
+66,2019-12-07 16:58:09,40.11199951171875,-88.23650360107422,Sophomore,Logical,A-(3.5-3.75),Sophomore,Male,Graduates,Logical,B(3.0-3.25),Logical,B(3.0-3.25),FALSE
+85,2019-12-07 18:45:47,34.032196044921875,-118.28359985351562,Freshman,Logical,A-(3.5-3.75),Junior,Male,Graduates,Prefer not to say,B+(3.25-3.5),Emotional,A-(3.5-3.75),FALSE
+960,2019-12-07 19:36:46,41.23240661621094,-95.8750991821289,Senior,Logical,A(3.75-4.0),Senior,Female,Senior,Emotional,B(3.0-3.25),Emotional,B+(3.25-3.5),FALSE
+78,2019-12-07 22:16:22,39.928802490234375,116.38888549804688,Junior,Logical,A-(3.5-3.75),Sophomore,Male,Junior,Logical,A(3.75-4.0),Logical,B(3.0-3.25),FALSE
+43,2019-12-08 01:06:18,32.06170654296875,118.77780151367188,Sophomore,Logical,A-(3.5-3.75),Sophomore,Male,Other,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),FALSE
+39,2019-12-08 03:51:14,31.773605346679688,119.95401000976562,Freshman,Logical,A(3.75-4.0),Senior,Prefer not to say,Sophomore,Logical,A(3.75-4.0),Logical,C(2.25-2.5),FALSE
+61,2019-12-09 12:28:56,41.848297119140625,-87.651702880859375,Sophomore,Logical,A-(3.5-3.75),Freshman,Male,Junior,Logical,A-(3.5-3.75),Emotional,B+(3.25-3.5),FALSE
+145,2019-12-05 15:29:50,42.33990478515625,-71.12449645996094,Junior,Emotional,B+(3.25-3.5),Senior,Male,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+67,2019-12-05 15:31:57,42.46519470214844,-83.37129974365234,Senior,Logical,A-(3.5-3.75),Junior,Female,Graduates,Prefer not to say,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+631,2019-12-05 15:33:04,40.7427978515625,-73.97119903564453,Freshman,Logical,B+(3.25-3.5),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,A-(3.5-3.75),TRUE
+66,2019-12-05 15:35:52,42.41780090332031,-71.1134033203125,Graduates,Emotional,B+(3.25-3.5),Graduates,Female,Senior,Emotional,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+43,2019-12-05 15:36:07,43.44189453125,-80.421600341796875,Freshman,Logical,A-(3.5-3.75),Freshman,Prefer not to say,Other,Prefer not to say,Prefer not to say,Logical,A(3.75-4.0),TRUE
+56,2019-12-05 15:36:24,42.35450744628906,-71.07039642333984,Freshman,Logical,A-(3.5-3.75),PhD,Female,Sophomore,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+73,2019-12-05 15:37:47,42.346405029296875,-71.097503662109375,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+54,2019-12-05 15:38:04,42.37249755859375,-71.181396484375,Graduates,Emotional,B+(3.25-3.5),Freshman,Male,Graduates,Emotional,B+(3.25-3.5),Logical,B(3.0-3.25),TRUE
+77,2019-12-05 15:40:46,42.33990478515625,-71.12449645996094,Graduates,Logical,B+(3.25-3.5),Senior,Female,Graduates,Logical,Prefer not to say,Logical,A-(3.5-3.75),TRUE
+85,2019-12-05 15:41:47,42.03729248046875,-93.60050201416016,Graduates,Logical,A(3.75-4.0),Junior,Male,Senior,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+82,2019-12-05 15:44:33,48.85820007324219,2.3386993408203125,Senior,Emotional,B+(3.25-3.5),Senior,Female,Graduates,Prefer not to say,B(3.0-3.25),Logical,A-(3.5-3.75),TRUE
+60,2019-12-05 15:45:17,41.01029968261719,-73.92500305175781,Junior,Emotional,B+(3.25-3.5),Graduates,Female,Graduates,Prefer not to say,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+41,2019-12-05 15:45:43,42.05140686035156,-93.69080352783203,Senior,Logical,A-(3.5-3.75),Sophomore,Female,Senior,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+87,2019-12-05 15:47:16,38.714202880859375,-90.2759017944336,Graduates,Logical,A(3.75-4.0),Junior,Male,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+79,2019-12-05 15:48:27,42.36399841308594,-71.02649688720703,Sophomore,Emotional,B+(3.25-3.5),Sophomore,Female,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+56,2019-12-05 15:53:14,42.37249755859375,-71.181396484375,Graduates,Emotional,B+(3.25-3.5),Graduates,Male,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+107,2019-12-05 15:53:21,41.873992919921875,-71.3843994140625,Junior,Emotional,A(3.75-4.0),Junior,Female,Sophomore,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+73,2019-12-05 15:56:32,42.246307373046875,-70.99720001220703,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),TRUE
+70,2019-12-05 15:58:29,42.356201171875,-71.06310272216797,Junior,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+167,2019-12-05 16:00:10,42.33880615234375,-71.072601318359375,Freshman,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Emotional,B(3.0-3.25),Logical,A-(3.5-3.75),TRUE
+60,2019-12-05 16:02:30,42.33990478515625,-71.12449645996094,Graduates,Emotional,A(3.75-4.0),Graduates,Male,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+75,2019-12-05 16:07:39,40.671295166015625,-73.89430236816406,Graduates,Emotional,B(3.0-3.25),Graduates,Female,Graduates,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+86,2019-12-05 16:10:56,43.12750244140625,-77.62770080566406,Graduates,Logical,A(3.75-4.0),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,B+(3.25-3.5),TRUE
+77,2019-12-05 16:16:11,42.27960205078125,-71.1281967163086,Graduates,Logical,A-(3.5-3.75),Senior,Female,Graduates,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+204,2019-12-05 16:25:11,22.2908935546875,114.14999389648438,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Senior,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+82,2019-12-05 16:29:30,42.36399841308594,-71.02649688720703,Graduates,Emotional,B(3.0-3.25),Senior,Female,Graduates,Logical,A-(3.5-3.75),Logical,B+(3.25-3.5),TRUE
+52,2019-12-05 16:36:19,42.34269714355469,-71.09220123291016,Sophomore,Emotional,A-(3.5-3.75),Sophomore,Female,Freshman,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+56,2019-12-05 16:40:59,42.34739685058594,-71.158203125,Junior,Logical,A-(3.5-3.75),Sophomore,Male,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+63,2019-12-05 16:50:53,36.84519958496094,111.78170776367188,Junior,Logical,A(3.75-4.0),Senior,Female,Sophomore,Prefer not to say,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+56,2019-12-05 17:01:57,42.346405029296875,-71.097503662109375,Graduates,Logical,A-(3.5-3.75),Senior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+61,2019-12-05 17:05:47,42.34739685058594,-71.158203125,Graduates,Emotional,B+(3.25-3.5),Junior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+131,2019-12-05 17:14:55,51.50050354003906,-0.08349609375,Junior,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+118,2019-12-05 17:27:00,31.044906616210938,121.40121459960938,Sophomore,Emotional,B+(3.25-3.5),Freshman,Female,Other,Prefer not to say,C+(2.5-2.75),Emotional,B(3.0-3.25),TRUE
+84,2019-12-05 17:44:54,42.32679748535156,-71.13410186767578,Junior,Logical,B+(3.25-3.5),Sophomore,Female,Graduates,Emotional,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+128,2019-12-05 17:53:31,42.297393798828125,-71.07219696044922,Graduates,Logical,B+(3.25-3.5),Junior,Male,Graduates,Logical,B(3.0-3.25),Logical,A-(3.5-3.75),TRUE
+54,2019-12-05 18:27:07,40.7467041015625,-74.057403564453125,Freshman,Emotional,B(3.0-3.25),Freshman,Male,PhD,Logical,B+(3.25-3.5),Logical,B+(3.25-3.5),TRUE
+102,2019-12-05 18:40:51,32.06170654296875,118.77780151367188,Junior,Emotional,B+(3.25-3.5),Sophomore,Male,Other,Prefer not to say,B+(3.25-3.5),Emotional,A-(3.5-3.75),TRUE
+132,2019-12-05 19:01:27,43.11279296875,-77.4906005859375,Senior,Emotional,B+(3.25-3.5),Junior,Male,Other,Logical,B-(2.75-3.0),Logical,A-(3.5-3.75),TRUE
+60,2019-12-05 19:08:29,41.848297119140625,-87.651702880859375,Senior,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Prefer not to say,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+106,2019-12-05 19:12:36,39.95869445800781,-82.99870300292969,Graduates,Emotional,B+(3.25-3.5),Junior,Female,Graduates,Logical,A-(3.5-3.75),Logical,B+(3.25-3.5),TRUE
+156,2019-12-05 19:14:33,31.304092407226562,120.59539794921875,Graduates,Logical,A-(3.5-3.75),Senior,Male,Other,Emotional,B(3.0-3.25),Logical,A(3.75-4.0),TRUE
+103,2019-12-05 19:15:13,43.8800048828125,125.32281494140625,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+113,2019-12-05 19:20:02,31.044906616210938,121.40121459960938,Graduates,Logical,B+(3.25-3.5),Junior,Female,Graduates,Emotional,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+47,2019-12-05 19:25:10,41.718505859375,-93.5645980834961,Senior,Logical,B+(3.25-3.5),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+89,2019-12-05 19:33:30,31.044906616210938,121.40121459960938,Sophomore,Emotional,A-(3.5-3.75),Freshman,Female,Senior,Prefer not to say,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+56,2019-12-05 19:34:39,33.808807373046875,-84.28150177001953,Graduates,Emotional,B+(3.25-3.5),PhD,Prefer not to say,Graduates,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),TRUE
+94,2019-12-05 19:34:53,33.85130310058594,-84.28700256347656,Graduates,Emotional,B+(3.25-3.5),Graduates,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+86,2019-12-05 19:49:02,39.142303466796875,117.172607421875,PhD,Logical,A(3.75-4.0),Junior,Female,Graduates,Prefer not to say,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+49,2019-12-05 19:51:48,33.794097900390625,-84.32499694824219,Junior,Logical,A-(3.5-3.75),Sophomore,Male,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+272,2019-12-05 20:06:01,31.044906616210938,121.40121459960938,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Logical,B(3.0-3.25),Logical,A(3.75-4.0),TRUE
+117,2019-12-05 20:15:37,42.03729248046875,-93.60050201416016,Graduates,Logical,A-(3.5-3.75),PhD,Male,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+65,2019-12-05 20:19:15,42.356201171875,-71.06310272216797,Junior,Logical,A-(3.5-3.75),Sophomore,Male,Sophomore,Prefer not to say,Prefer not to say,Logical,A(3.75-4.0),TRUE
+204,2019-12-05 20:35:42,39.928802490234375,116.38888549804688,Freshman,Emotional,A-(3.5-3.75),Junior,Female,Freshman,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+157,2019-12-05 20:42:18,30.29400634765625,120.16189575195312,PhD,Emotional,A-(3.5-3.75),Graduates,Female,Junior,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+17896,2019-12-05 20:48:27,42.3634033203125,-71.07129669189453,Graduates,Emotional,B+(3.25-3.5),Graduates,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+131,2019-12-05 20:49:30,31.304092407226562,120.59539794921875,Sophomore,Emotional,B+(3.25-3.5),Graduates,Female,Sophomore,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+73,2019-12-05 21:12:11,42.37249755859375,-71.181396484375,Graduates,Logical,B(3.0-3.25),PhD,Male,Other,Prefer not to say,B-(2.75-3.0),Logical,A(3.75-4.0),TRUE
+136,2019-12-05 21:34:28,32.06170654296875,118.77780151367188,Graduates,Logical,A(3.75-4.0),Senior,Male,Graduates,Prefer not to say,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+71,2019-12-06 00:20:04,42.34739685058594,-71.158203125,Senior,Logical,B+(3.25-3.5),Junior,Female,Graduates,Logical,B(3.0-3.25),Logical,A-(3.5-3.75),TRUE
+86,2019-12-06 01:11:48,51.50419616699219,-0.2198944091796875,Freshman,Logical,B+(3.25-3.5),Junior,Female,Freshman,Logical,A-(3.5-3.75),Emotional,A-(3.5-3.75),TRUE
+65,2019-12-06 02:21:14,53.79649353027344,-1.5478057861328125,Senior,Logical,A-(3.5-3.75),Freshman,Female,Graduates,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+88,2019-12-06 02:43:12,31.044906616210938,121.40121459960938,Senior,Emotional,A-(3.5-3.75),Junior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+92,2019-12-06 04:03:36,49.03509521484375,2.07550048828125,Freshman,Emotional,B+(3.25-3.5),Freshman,Female,Graduates,Emotional,B+(3.25-3.5),Logical,B+(3.25-3.5),TRUE
+63,2019-12-06 04:22:12,31.304092407226562,120.59539794921875,Junior,Emotional,A-(3.5-3.75),Graduates,Female,Sophomore,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+76,2019-12-06 04:32:36,30.29400634765625,120.16189575195312,Graduates,Emotional,A-(3.5-3.75),Graduates,Female,Senior,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),TRUE
+59,2019-12-06 05:06:26,42.35130310058594,-71.13700103759766,Junior,Logical,A(3.75-4.0),Graduates,Female,Graduates,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+56,2019-12-06 05:43:21,31.304092407226562,120.59539794921875,Sophomore,Logical,A-(3.5-3.75),Freshman,Male,Senior,Prefer not to say,B+(3.25-3.5),Logical,B+(3.25-3.5),TRUE
+62,2019-12-06 06:00:48,22.2908935546875,114.14999389648438,Freshman,Logical,A-(3.5-3.75),Senior,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+105,2019-12-06 06:19:18,48.85820007324219,2.3386993408203125,Graduates,Logical,A-(3.5-3.75),Freshman,Male,Sophomore,Logical,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+53,2019-12-06 08:41:45,42.46519470214844,-83.37129974365234,Graduates,Logical,A(3.75-4.0),PhD,Male,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+145,2019-12-06 09:17:39,42.42799377441406,-71.061798095703125,Junior,Emotional,A-(3.5-3.75),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Emotional,A-(3.5-3.75),TRUE
+72,2019-12-06 10:31:22,38.77409362792969,-77.2385025024414,Sophomore,Logical,A-(3.5-3.75),Graduates,Female,Graduates,Prefer not to say,B+(3.25-3.5),Logical,A-(3.5-3.75),TRUE
+43,2019-12-06 10:56:49,42.346405029296875,-71.097503662109375,Graduates,Logical,A(3.75-4.0),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+116,2019-12-06 11:09:03,42.297393798828125,-71.07219696044922,Graduates,Logical,A-(3.5-3.75),PhD,Female,Sophomore,Logical,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+61,2019-12-06 11:37:33,42.31199645996094,-71.10810089111328,Graduates,Emotional,A-(3.5-3.75),Sophomore,Male,Graduates,Emotional,B(3.0-3.25),Emotional,B+(3.25-3.5),TRUE
+62,2019-12-06 12:23:38,42.346405029296875,-71.097503662109375,Junior,Emotional,B+(3.25-3.5),Senior,Female,Graduates,Prefer not to say,Prefer not to say,Emotional,A-(3.5-3.75),TRUE
+96,2019-12-06 12:29:47,42.346405029296875,-71.097503662109375,Junior,Logical,B+(3.25-3.5),Sophomore,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+61,2019-12-06 12:49:06,42.346405029296875,-71.097503662109375,Senior,Logical,B(3.0-3.25),Senior,Male,Graduates,Logical,A(3.75-4.0),Logical,B(3.0-3.25),TRUE
+62,2019-12-06 13:50:33,42.346405029296875,-71.097503662109375,Junior,Logical,A-(3.5-3.75),Sophomore,Male,Graduates,Logical,B+(3.25-3.5),Emotional,B+(3.25-3.5),TRUE
+7717,2019-12-06 14:20:01,41.848297119140625,-87.651702880859375,Junior,Logical,B+(3.25-3.5),Sophomore,Male,PhD,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+72,2019-12-06 14:39:23,42.32679748535156,-71.13410186767578,Graduates,Logical,A-(3.5-3.75),Senior,Female,Graduates,Emotional,B+(3.25-3.5),Logical,A(3.75-4.0),TRUE
+157,2019-12-06 21:45:11,23.030807495117188,113.7174072265625,Graduates,Emotional,B+(3.25-3.5),Senior,Female,Senior,Prefer not to say,C(2.25-2.5),Logical,A-(3.5-3.75),TRUE
+89,2019-12-06 21:47:50,23.030807495117188,113.7174072265625,Senior,Logical,A-(3.5-3.75),Junior,Female,Graduates,Emotional,B-(2.75-3.0),Logical,A(3.75-4.0),TRUE
+98,2019-12-07 13:24:22,21.497100830078125,-158.04190063476562,Senior,Logical,A(3.75-4.0),Graduates,Male,Other,Prefer not to say,B(3.0-3.25),Logical,A(3.75-4.0),TRUE
+88,2019-12-07 13:25:37,42.34739685058594,-71.158203125,Graduates,Logical,B(3.0-3.25),Sophomore,Female,Senior,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+40,2019-12-07 13:33:27,40.104705810546875,-88.2061996459961,Junior,Logical,B+(3.25-3.5),Junior,Female,Graduates,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+52,2019-12-07 13:43:31,42.46519470214844,-83.37129974365234,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Senior,Logical,Prefer not to say,Logical,A(3.75-4.0),TRUE
+70,2019-12-07 13:47:41,34.0469970703125,-118.2750015258789,Junior,Logical,A(3.75-4.0),Senior,Female,Junior,Emotional,A(3.75-4.0),Emotional,A(3.75-4.0),TRUE
+89,2019-12-07 13:52:22,42.03729248046875,-93.60050201416016,Graduates,Logical,A-(3.5-3.75),Graduates,Female,Senior,Prefer not to say,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+117,2019-12-07 13:52:44,51.51609802246094,0.0583953857421875,Junior,Emotional,B+(3.25-3.5),Freshman,Female,Graduates,Emotional,B+(3.25-3.5),Logical,B+(3.25-3.5),TRUE
+49,2019-12-07 13:54:14,39.13969421386719,-86.51409912109375,Junior,Logical,A(3.75-4.0),Senior,Female,Sophomore,Emotional,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+54,2019-12-07 13:57:32,42.246307373046875,-70.99720001220703,Junior,Emotional,B(3.0-3.25),Junior,Male,Graduates,Logical,A-(3.5-3.75),Logical,A-(3.5-3.75),TRUE
+94,2019-12-07 14:04:22,42.246307373046875,-70.99720001220703,Graduates,Logical,B+(3.25-3.5),Graduates,Male,Senior,Logical,B-(2.75-3.0),Logical,B+(3.25-3.5),TRUE
+40,2019-12-07 14:14:27,41.83070373535156,-71.39820098876953,Junior,Emotional,A-(3.5-3.75),Senior,Prefer not to say,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+132,2019-12-07 14:24:58,42.05140686035156,-93.69080352783203,Senior,Logical,B+(3.25-3.5),Sophomore,Male,PhD,Logical,A(3.75-4.0),Logical,A-(3.5-3.75),TRUE
+262,2019-12-07 15:08:09,42.94099426269531,-88.05030059814453,Graduates,Emotional,A(3.75-4.0),Graduates,Male,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+104,2019-12-07 15:09:37,42.03729248046875,-93.60050201416016,PhD,Logical,A-(3.5-3.75),PhD,Male,Junior,Emotional,B(3.0-3.25),Logical,A-(3.5-3.75),TRUE
+43,2019-12-07 15:32:26,42.03599548339844,-93.46520233154297,Graduates,Logical,A(3.75-4.0),Senior,Female,Senior,Logical,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+142,2019-12-07 16:04:45,3.0832977294921875,101.64999389648438,Graduates,Logical,A-(3.5-3.75),Senior,Male,Graduates,Logical,A(3.75-4.0),Logical,A(3.75-4.0),TRUE
+339,2019-12-07 16:41:22,47.80220031738281,-122.28599548339844,Sophomore,Logical,A-(3.5-3.75),Junior,Male,Junior,Logical,B(3.0-3.25),Logical,A(3.75-4.0),TRUE
+86,2019-12-07 19:21:32,42.34269714355469,-71.09220123291016,Graduates,Emotional,A-(3.5-3.75),Graduates,Female,Graduates,Emotional,A-(3.5-3.75),Logical,A(3.75-4.0),TRUE
+39,2019-12-07 20:02:54,42.35130310058594,-71.13700103759766,PhD,Emotional,Below C-(<2.0),PhD,Prefer not to say,PhD,Logical,A(3.75-4.0),Emotional,C-(2.0-2.25),TRUE
+126,2019-12-09 05:36:32,42.34739685058594,-71.158203125,Graduates,Logical,B+(3.25-3.5),Freshman,Female,Graduates,Logical,A-(3.5-3.75),Emotional,B+(3.25-3.5),TRUE
