@@ -88,16 +88,16 @@ smart_cleaned = smart2 %>%
 ```{r}
 control = smart_cleaned %>% 
   filter(Treatment == F) %>% 
-  select(-c(Q4.3:Q4.5), class=Q3.3, personality=Q3.4, grade=Q3.5)
+  select(-c(Q4.3, Q4.4, Q4.5), class=Q3.3, personality=Q3.4, grade=Q3.5)
 ```
 
 ```{r}
 treatment = smart_cleaned %>% 
   filter(Treatment == T) %>% 
-  select(-c(Q3.3:Q3.5), class = Q4.3, personality=Q4.4, grade=Q4.5) 
+  select(-c(Q3.3, Q3.4, Q3.5), class = Q4.3, personality=Q4.4, grade=Q4.5) 
 
-# cbind(control, treatment)
-
+data = rbind(control, treatment)
+write_csv(data, "data.csv")
 ```
 
 
