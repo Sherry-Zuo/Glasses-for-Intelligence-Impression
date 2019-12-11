@@ -186,6 +186,15 @@ table(data2$personality)
 write_csv(data2, "data2.csv")
 ```
 
+```{r}
+analysis<-fread("data2.csv")
+```
+```{r}
+summary(lm(grade~Treatment, data=analysis))
+```
+```{r}
+summary(lm(personality~Treatment, data=analysis))
+```
 
 
 
