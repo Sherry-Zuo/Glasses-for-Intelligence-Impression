@@ -195,16 +195,17 @@ summary(lm(grade~Treatment, data=analysis))
 ```{r}
 summary(lm(personality~Treatment, data=analysis))
 ```
+```{r}
+summary(felm(grade~Treatment*grade_p*gender_p*personality_p, data=analysis))
+```
+```{r}
+summary(felm(personality~Treatment*personality_p*gender_p, data=analysis))
+```
 
 
 
 
 ###############################################################################
-```{r}
-
-```
-
-
 We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
 ```{r}
 guess <- read_csv("glasses.csv")
@@ -216,6 +217,12 @@ names(guess)
 names(guess) <- "purpose_guess"
 ```
 
+```{r}
+names(guess)
+```
+```{r}
+names(guess)<-"purpose_guess"
+```
 
 
 
