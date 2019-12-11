@@ -103,6 +103,87 @@ data2 = na.omit(data2)
 ```
 ```{r}
 dim(data2)
+table(data2$grade)
+summary(data2$grade_)
+```
+
+```{r}
+# Convert GPA
+
+data2$grade = ifelse(data2$grade == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade == "Prefer not to say", NA, 1)
+                                                               ))))))))
+table(data2$grade)
+```
+
+```{r}
+# Convert GPA_P
+
+data2$grade_p = ifelse(data2$grade_p == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade_p == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade_p == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade_p == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade_p == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade_p == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade_p == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade_p == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade_p == "Prefer not to say", NA,
+                                                                             1)))))))))
+table(data2$grade_p)
+```
+
+```{r}
+# Convert GPA_baseline
+
+data2$grade_baseline = ifelse(data2$grade_baseline == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade_baseline == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade_baseline == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade_baseline == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade_baseline == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade_baseline == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade_baseline == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade_baseline == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade_baseline == "Prefer not to say", NA,
+                                                                             1)))))))))
+table(data2$grade_baseline)
+```
+```{r}
+data2$gender_p = ifelse(data2$gender_p == "Male", 1,
+                 ifelse(data2$gender_p == "Female", 0, NA))
+
+table(data2$gender_p)
+```
+
+```{r}
+data2$personality_baseline = ifelse(data2$personality_baseline == "Logical", 1,
+                             ifelse(data2$personality_baseline == "Emotional", 0, NA))
+
+table(data2$personality_baseline)
+```
+
+```{r}
+data2$personality_p = ifelse(data2$personality_p == "Logical", 1,
+                             ifelse(data2$personality_p == "Emotional", 0, NA))
+
+table(data2$personality_p)
+```
+
+```{r}
+data2$personality = ifelse(data2$personality == "Logical", 1,
+                             ifelse(data2$personality == "Emotional", 0, NA))
+
+table(data2$personality)
+```
+
+```{r}
+write_csv(data2, "data2.csv")
 ```
 
 
@@ -110,6 +191,9 @@ dim(data2)
 
 
 ###############################################################################
+```{r}
+
+```
 
 
 We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
