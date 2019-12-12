@@ -230,17 +230,18 @@ grid.arrange(p1,p2,p3, nrow=3, ncol=1)
 ```
 
 ```{r}
-with(analysis, table(gender_p, grade_p))
+ggplot(analysis, aes(x=factor(grade), fill=Treatment))+
+  geom_bar(position = "dodge")+
+  theme(panel.background = element_rect(fill="white"))
 ```
-```{r}
-male_grade<-analysis[gender_p==1, grade_p]
-table(male_grade)
-female_grade<-analysis[gender_p==0, grade_p]
-table(female_grade)
-t.test(male_grade, female_grade)
-```
-Since the p-value is 0.039604 which smaller than 0.05, so we reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's not 50/50 split by gender in each grade level, so the experiment didn't achieve its desired randomizaion.   
 
+##Randomization Check/Balance Check
+```{r}
+summary(lm(grade_baseline~Treatment, analysis))
+```
+Since the p-value is 0.9251 which is larger than 0.05, the R-square is -0.0048823 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on grade taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.   
+
+##Causal Effect 
 ```{r}
 summary(lm(grade~Treatment, data=analysis))
 lowerci<-0.98829-1.96*0.16252
@@ -250,51 +251,62 @@ upperci
 ```
 The ATE of treatment on grade is **0.98829**, the 95% confidence interval is **[0.6697508, 1.3068292]**. 
 
+##Fixed Effect Check
+###Grade_Baseline
 ```{r}
-#adding the variable grade_p as a covariate to increase the precision of our ATE estimate.
-summary(lm(grade~Treatment+grade_baseline, data=analysis))
-lowerci2<-0.982320-1.96*0.149994
-lowerci2
-upperci2<-0.982320+1.96*0.149994
-upperci2
+summary(felm(grade~grade_baseline, data=analysis))
 ```
-The ATE of treatment on grade is **0.982320**, the 95% confidence interval is **[0.68833176, 1.2763082]**. By comparison, the standard error is smaller than before, it's more precise, and since the p-value of grade_baseline is less than 0.05, so it's a statistically significant covariate.
+Since the p-value is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the baseline has effect for the grade, that's what we want to do baseline during our survey. Thus, it's a fixed effect. 
+###Personal Gender
+```{r}
+with(analysis, table(gender_p, grade))
+```
+```{r}
+male_grade<-analysis[gender_p==1, grade]
+table(male_grade)
+female_grade<-analysis[gender_p==0, grade]
+table(female_grade)
+t.test(male_grade, female_grade)
+```
+Since the p-value is 0.030423 which smaller than 0.05, so we reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's not 50/50 split by gender in each grade level, so the experiment didn't achieve its desired randomizaion, so we need to consider gender as fixed effect.    
+###Personal Personality
+```{r}
+with(analysis, table(personality_p, grade))
+```
+```{r}
+logical_grade<-analysis[personality_p==1, grade]
+table(logical_grade)
+emotional_grade<-analysis[personality_p==0, grade]
+table(emotional_grade)
+t.test(logical_grade, emotional_grade)
+```
+Since the p-value is 0.056235 which larger than 0.05, so we fail to reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's 50/50 split by personality in each grade level, so the experiment achieve its desired randomizaion, so we do need to consider personality as fixed effect. 
+###Class
+Since most of our survey participants are around Graduates, but their classes guessing of pictures are randomly, so we do not think it's a fixed effect here. 
 
 ```{r}
-summary(lm(personality~Treatment, data=analysis))
-lowerci3<-0.285456-1.96*0.058103
-lowerci3
-upperci3<-0.285456+1.96*0.058103
-upperci3
-```
-The ATE of treatment on grade is **0.285456**, the 95% confidence interval is **[0.17157412, 0.39933788]**. 
-
-```{r}
-#adding the variable grade_p as a covariate to increase the precision of our ATE estimate.
-summary(lm(personality~Treatment+personality_baseline, data=analysis))
-lowerci4<-0.282145-1.96*0.058269
-lowerci4
-upperci4<-0.282145+1.96*0.058269
-upperci4
-```
-The ATE of treatment on grade is **0.282145**, the 95% confidence interval is **[0.16793776, 0.39635224]**. By comparison, the standard error is larger than before, it does not achieve our goal of precise. Also, since the p-value of grade_baseline is 0.3924 which is larger than 0.05, so the grade_baseline is not statistically significant as a covariate.  
-
-##Randomization Check
-```{r}
-summary(lm(grade_baseline~Treatment, analysis))
-```
-Since the p-value is 0.9251 which is larger than 0.05, the R-square is -0.0048823 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on grade taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.   
-```{r}
-summary(lm(personality_baseline~Treatment, analysis))
-```
-Since the p-value is 0.3449 which is larger than 0.05, the R-square is -0.00050879 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on personality taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.  
-```{r}
-summary(felm(grade~Treatment*grade_p*gender_p*personality_p, data=analysis))
-```
-```{r}
-summary(felm(personality~Treatment*personality_p*gender_p, data=analysis))
+summary(felm(grade~Treatment | grade_baseline + gender_p, data=analysis))
 ```
 
+##Limitation
+```{r}
+summary(felm(grade~Treatment+personality | grade_baseline + gender_p, data=analysis))
+```
+```{r}
+summary(felm(grade~Treatment+class | grade_baseline + gender_p, data=analysis))
+```
+
+```{r}
+summary(felm(grade~Treatment*personality | grade_baseline + gender_p, data=analysis))
+```
+
+```{r}
+summary(felm(grade~Treatment*class| grade_baseline + gender_p, data=analysis))
+```
+
+```{r}
+summary(felm(grade~personality*class| grade_baseline + gender_p, data=analysis))
+```
 
 
 
@@ -309,6 +321,5 @@ names(guess)
 ```{r}
 names(guess)<-"purpose_guess"
 ```
-
 
 
