@@ -31,6 +31,7 @@ library(lubridate)
 library(stargazer)
 library(gridExtra)
 library(naniar)
+library(ggmap)
 ```
 
 ```{r}
@@ -38,7 +39,9 @@ smart <- fread("survey.csv")
 ```
 
 ```{r}
-skimr::skim(smart)
+#skimr::skim(smart)
+#View(smart)
+dim(smart)
 ```
 
 ```{r}
@@ -50,6 +53,7 @@ smart=smart%>%select(-Status, -DistributionChannel, -RecipientEmail, -RecipientF
 ```
 
 ```{r}
+#only keep finished records
 smart=smart%>%filter(Finished=="True")%>%filter(Progress==100)
 ```
 
@@ -61,10 +65,12 @@ smart=smart%>%select(-Progress, -Finished)
 length(unique(smart$ResponseId))
 length(unique(smart$IPAddress))
 ```
-So, some people take more than once, we only want to keep each person once.
+
 ```{r}
+#some people take more than once, we only want to keep each person once.
 smart=smart%>%distinct(IPAddress, .keep_all = TRUE)
 ```
+
 ```{r}
 # Add treatment/control dummy variable:
 smart2 = smart %>% 
@@ -92,6 +98,7 @@ treatment = smart_cleaned %>%
 data = rbind(control, treatment)
 #write_csv(data, "data.csv")
 ```
+
 ```{r}
 data2<-read.csv("data.csv", na.strings = c("", "NA"))
 ```
@@ -103,13 +110,10 @@ data2 = na.omit(data2)
 ```
 ```{r}
 dim(data2)
-table(data2$grade)
-summary(data2$grade_)
 ```
 
 ```{r}
 # Convert GPA
-
 data2$grade = ifelse(data2$grade == "A(3.75-4.0)", 9,
                      ifelse(data2$grade == "A-(3.5-3.75)", 8,
                             ifelse(data2$grade == "B+(3.25-3.5)", 7,
@@ -125,7 +129,6 @@ table(data2$grade)
 
 ```{r}
 # Convert GPA_P
-
 data2$grade_p = ifelse(data2$grade_p == "A(3.75-4.0)", 9,
                      ifelse(data2$grade_p == "A-(3.5-3.75)", 8,
                             ifelse(data2$grade_p == "B+(3.25-3.5)", 7,
@@ -141,7 +144,6 @@ table(data2$grade_p)
 
 ```{r}
 # Convert GPA_baseline
-
 data2$grade_baseline = ifelse(data2$grade_baseline == "A(3.75-4.0)", 9,
                      ifelse(data2$grade_baseline == "A-(3.5-3.75)", 8,
                             ifelse(data2$grade_baseline == "B+(3.25-3.5)", 7,
@@ -183,18 +185,109 @@ table(data2$personality)
 ```
 
 ```{r}
-write_csv(data2, "data2.csv")
+#save final cleaned version of data
+#write_csv(data2, "data2.csv")
 ```
 
 ```{r}
 analysis<-fread("data2.csv")
 ```
+
+```{r}
+summary(analysis)
+```
+
+```{r}
+names(analysis)
+```
+
+```{r}
+ggplot(data=analysis, aes(x=factor(gender_p), fill=factor(grade)))+
+  geom_bar()+
+  labs(x="Gender", fill="Grade")+
+  theme(panel.background = element_rect(fill="white"))
+```
+
+```{r message=FALSE}
+qmplot(x = LocationLongitude, y = LocationLatitude, data = analysis, colour = 'blue', alpha=0.4,  size = 0.6, zoom=5) + 
+  theme(legend.position="")
+```
+
+```{r}
+analysis$class_baseline<-factor(analysis$class_baseline, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p1<-ggplot(analysis, aes(x=class_baseline, fill=factor(gender_p)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class<-factor(analysis$class, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p2<-ggplot(analysis, aes(x=class, fill=factor(gender_p)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class_p<-factor(analysis$class_p, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD", "Other"))
+p3<-ggplot(analysis, aes(x=class_p, fill=factor(gender_p)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+grid.arrange(p1,p2,p3, nrow=3, ncol=1)
+```
+
+```{r}
+with(analysis, table(gender_p, grade_p))
+```
+```{r}
+male_grade<-analysis[gender_p==1, grade_p]
+table(male_grade)
+female_grade<-analysis[gender_p==0, grade_p]
+table(female_grade)
+t.test(male_grade, female_grade)
+```
+Since the p-value is 0.039604 which smaller than 0.05, so we reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's not 50/50 split by gender in each grade level, so the experiment didn't achieve its desired randomizaion.   
+
 ```{r}
 summary(lm(grade~Treatment, data=analysis))
+lowerci<-0.98829-1.96*0.16252
+lowerci
+upperci<-0.98829+1.96*0.16252
+upperci
 ```
+The ATE of treatment on grade is **0.98829**, the 95% confidence interval is **[0.6697508, 1.3068292]**. 
+
+```{r}
+#adding the variable grade_p as a covariate to increase the precision of our ATE estimate.
+summary(lm(grade~Treatment+grade_baseline, data=analysis))
+lowerci2<-0.982320-1.96*0.149994
+lowerci2
+upperci2<-0.982320+1.96*0.149994
+upperci2
+```
+The ATE of treatment on grade is **0.982320**, the 95% confidence interval is **[0.68833176, 1.2763082]**. By comparison, the standard error is smaller than before, it's more precise, and since the p-value of grade_baseline is less than 0.05, so it's a statistically significant covariate.
+
 ```{r}
 summary(lm(personality~Treatment, data=analysis))
+lowerci3<-0.285456-1.96*0.058103
+lowerci3
+upperci3<-0.285456+1.96*0.058103
+upperci3
 ```
+The ATE of treatment on grade is **0.285456**, the 95% confidence interval is **[0.17157412, 0.39933788]**. 
+
+```{r}
+#adding the variable grade_p as a covariate to increase the precision of our ATE estimate.
+summary(lm(personality~Treatment+personality_baseline, data=analysis))
+lowerci4<-0.282145-1.96*0.058269
+lowerci4
+upperci4<-0.282145+1.96*0.058269
+upperci4
+```
+The ATE of treatment on grade is **0.282145**, the 95% confidence interval is **[0.16793776, 0.39635224]**. By comparison, the standard error is larger than before, it does not achieve our goal of precise. Also, since the p-value of grade_baseline is 0.3924 which is larger than 0.05, so the grade_baseline is not statistically significant as a covariate.  
+
+##Randomization Check
+```{r}
+summary(lm(grade_baseline~Treatment, analysis))
+```
+Since the p-value is 0.9251 which is larger than 0.05, the R-square is -0.0048823 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on grade taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.   
+```{r}
+summary(lm(personality_baseline~Treatment, analysis))
+```
+Since the p-value is 0.3449 which is larger than 0.05, the R-square is -0.00050879 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on personality taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.  
 ```{r}
 summary(felm(grade~Treatment*grade_p*gender_p*personality_p, data=analysis))
 ```
@@ -210,13 +303,6 @@ We have one optional question in the end of our survey to ask whether people can
 ```{r}
 guess <- read_csv("glasses.csv")
 ```
-```{r}
-names(guess)
-```
-```{r}
-names(guess) <- "purpose_guess"
-```
-
 ```{r}
 names(guess)
 ```
