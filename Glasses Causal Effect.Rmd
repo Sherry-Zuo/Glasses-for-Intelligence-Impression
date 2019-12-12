@@ -201,32 +201,9 @@ summary(analysis)
 names(analysis)
 ```
 
-```{r}
-ggplot(data=analysis, aes(x=factor(gender_p), fill=factor(grade)))+
-  geom_bar()+
-  labs(x="Gender", fill="Grade")+
-  theme(panel.background = element_rect(fill="white"))
-```
-
 ```{r message=FALSE}
 qmplot(x = LocationLongitude, y = LocationLatitude, data = analysis, colour = 'blue', alpha=0.4,  size = 0.6, zoom=5) + 
   theme(legend.position="")
-```
-
-```{r}
-analysis$class_baseline<-factor(analysis$class_baseline, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
-p1<-ggplot(analysis, aes(x=class_baseline, fill=factor(gender_p)))+
-  geom_bar()+
-  theme(panel.background = element_rect(fill="white"))
-analysis$class<-factor(analysis$class, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
-p2<-ggplot(analysis, aes(x=class, fill=factor(gender_p)))+
-  geom_bar()+
-  theme(panel.background = element_rect(fill="white"))
-analysis$class_p<-factor(analysis$class_p, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD", "Other"))
-p3<-ggplot(analysis, aes(x=class_p, fill=factor(gender_p)))+
-  geom_bar()+
-  theme(panel.background = element_rect(fill="white"))
-grid.arrange(p1,p2,p3, nrow=3, ncol=1)
 ```
 
 ```{r}
@@ -256,7 +233,8 @@ The ATE of treatment on grade is **0.98829**, the 95% confidence interval is **[
 ```{r}
 summary(felm(grade~grade_baseline, data=analysis))
 ```
-Since the p-value is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the baseline has effect for the grade, that's what we want to do baseline during our survey. Thus, it's a fixed effect. 
+Since the p-value is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the baseline has effect for the grade, that's what we want to do baseline during our survey. Thus, it's a fixed effect in our result. 
+
 ###Personal Gender
 ```{r}
 with(analysis, table(gender_p, grade))
@@ -268,7 +246,8 @@ female_grade<-analysis[gender_p==0, grade]
 table(female_grade)
 t.test(male_grade, female_grade)
 ```
-Since the p-value is 0.030423 which smaller than 0.05, so we reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's not 50/50 split by gender in each grade level, so the experiment didn't achieve its desired randomizaion, so we need to consider gender as fixed effect.    
+With the t-test, since the p-value is 0.030423 which is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the gender of each subject has an effect on the grade. Thus, it's a fixed effect on our results.    
+
 ###Personal Personality
 ```{r}
 with(analysis, table(personality_p, grade))
@@ -280,38 +259,38 @@ emotional_grade<-analysis[personality_p==0, grade]
 table(emotional_grade)
 t.test(logical_grade, emotional_grade)
 ```
-Since the p-value is 0.056235 which larger than 0.05, so we fail to reject the null hypothesis, so we have 95% confidence that the true difference in means is not equal to 0, so which means it's 50/50 split by personality in each grade level, so the experiment achieve its desired randomizaion, so we do need to consider personality as fixed effect. 
+With the t-test, since the p-value is 0.056235 which is larger than 0.05, so we fail to reject the null hypothesis, so we don’t have 95% confidence that the personality of each subject has an effect on the grade. Thus, it's not a fixed effect in our result.  
+
 ###Class
-Since most of our survey participants are around Graduates, but their classes guessing of pictures are randomly, so we do not think it's a fixed effect here. 
+```{r}
+analysis$class_baseline<-factor(analysis$class_baseline, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p1<-ggplot(analysis, aes(x=class_baseline, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class<-factor(analysis$class, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p2<-ggplot(analysis, aes(x=class, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class_p<-factor(analysis$class_p, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD", "Other"))
+p3<-ggplot(analysis, aes(x=class_p, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+grid.arrange(p1,p2,p3, nrow=3, ncol=1)
+```
+While comparing the distributions of the class of photo A (baseline), photo B, the subject itself, we find that although most of the subjects are graduates, their judgment on photo B is still almost evenly distributed. Hence, we don’t believe that it's a fixed effect.  
 
 ```{r}
 summary(felm(grade~Treatment | grade_baseline + gender_p, data=analysis))
 ```
+Based on our fixed effect check, we would like to estimate those fixed effects of grade_baseline and gender_p in our final regression to find the effect of classes for letter grade impression. There is a smaller p-value which is less than 0.05, so the treatment effect on glasses with fixed effects is statistically significant. Here, we could find after considering fixed effects, compared with the original causal effect model, this model has a smaller standard error, a larger adjusted R-squared. It’s more precise. Thus, we believe that the causal effect model with the fixed effect would be a better model.  
 
 ##Limitation
 ```{r}
 summary(felm(grade~Treatment+personality | grade_baseline + gender_p, data=analysis))
 ```
-```{r}
-summary(felm(grade~Treatment+class | grade_baseline + gender_p, data=analysis))
-```
-
-```{r}
-summary(felm(grade~Treatment*personality | grade_baseline + gender_p, data=analysis))
-```
-
-```{r}
-summary(felm(grade~Treatment*class| grade_baseline + gender_p, data=analysis))
-```
-
-```{r}
-summary(felm(grade~personality*class| grade_baseline + gender_p, data=analysis))
-```
-
-
 
 ###############################################################################
-We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. 
+We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. We could try this if we have more time.  
 ```{r}
 guess <- read_csv("glasses.csv")
 ```
