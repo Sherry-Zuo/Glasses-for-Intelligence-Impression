@@ -207,7 +207,7 @@ qmplot(x = LocationLongitude, y = LocationLatitude, data = analysis, colour = 'b
 ```
 
 ```{r}
-analysis[, time_of_day := substr(RecordedDate, 12, 19)]
+analysis[, time_of_day := substr(RecordedDate, 12, 13)]
 analysis[, date := as_date(RecordedDate)]
 ```
 
@@ -215,6 +215,12 @@ analysis[, date := as_date(RecordedDate)]
 ggplot(analysis, aes(x=factor(date)))+
   geom_bar(aes(fill=Treatment))+
   theme(panel.background = element_rect(fill="white"))
+```
+
+```{r}
+ggplot(analysis, aes(x=factor(time_of_day)))+
+   geom_bar(aes(fill=Treatment))+
+   theme(panel.background = element_rect(fill="white"))
 ```
 
 ```{r}
