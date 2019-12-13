@@ -1,0 +1,319 @@
+---
+title: "Glasses For Letter Grade Impression"
+subtitle: BA830 - Fall 2019
+author: "team 7"
+date: "12/13/2019"
+output: pdf_document
+---
+
+**Team 7 Members:** Kunpeng Huang, Yoki Liu, Lyufan Pan, Yunlei Zhou, Jiayuan Zou, Sherry Zuo
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen=1, digits=8)
+```
+
+Key Elements of Project Writeup
+When you write up your project paper, there is no predefined format. However, these factors must be included:
+a. Your causal question of interest.  
+b. Your experimental design and what data you collected.  
+c. Why you chose the experiment design.  
+d. Summary statistics about the data.  
+e. Treatment effects.  
+f. Limitations of your study.  
+Make sure the paper is well-written and that there are figures and tables that are easy to understand.
+
+```{r}
+library(data.table)
+library(tidyverse)
+library(lfe)
+library(lubridate)
+library(stargazer)
+library(gridExtra)
+library(naniar)
+library(ggmap)
+```
+
+```{r}
+smart <- fread("survey.csv")
+```
+
+```{r}
+#skimr::skim(smart)
+#View(smart)
+dim(smart)
+```
+
+```{r}
+#head(smart, 2)
+```
+
+```{r}
+smart=smart%>%select(-Status, -DistributionChannel, -RecipientEmail, -RecipientFirstName, -RecipientLastName, -ExternalReference, -UserLanguage)
+```
+
+```{r}
+#only keep finished records
+smart=smart%>%filter(Finished=="True")%>%filter(Progress==100)
+```
+
+```{r}
+smart=smart%>%select(-Progress, -Finished)
+```
+
+```{r}
+length(unique(smart$ResponseId))
+length(unique(smart$IPAddress))
+```
+
+```{r}
+#some people take more than once, we only want to keep each person once.
+smart=smart%>%distinct(IPAddress, .keep_all = TRUE)
+```
+
+```{r}
+# Add treatment/control dummy variable:
+smart2 = smart %>% 
+  mutate(Treatment = ifelse(`Q4.1_First Click`=="", FALSE, TRUE))
+
+# Variable selection:
+smart_cleaned = smart2 %>% 
+  select(-c(`Q2.1_First Click`:`Q2.1_Click Count`, `Q3.1_First Click`:`Q3.1_Click Count`, 
+            `Q4.1_First Click`:`Q4.1_Click Count`, Q48, IPAddress, StartDate, EndDate, ResponseId)) %>% 
+  select(1:8, 
+         class_baseline=Q2.3, personality_baseline=Q2.4, grade_baseline=Q2.5, 
+         gender_p=Q5.1, class_p=Q5.2, personality_p=Q5.3, grade_p=Q5.4,
+         everything())
+```
+
+```{r}
+control = smart_cleaned %>% 
+  filter(Treatment == F) %>% 
+  select(-c(Q4.3, Q4.4, Q4.5), class=Q3.3, personality=Q3.4, grade=Q3.5)
+
+treatment = smart_cleaned %>% 
+  filter(Treatment == T) %>% 
+  select(-c(Q3.3, Q3.4, Q3.5), class = Q4.3, personality=Q4.4, grade=Q4.5) 
+
+data = rbind(control, treatment)
+#write_csv(data, "data.csv")
+```
+
+```{r}
+data2<-read.csv("data.csv", na.strings = c("", "NA"))
+```
+```{r}
+data2 = na.omit(data2)
+```
+```{r}
+#write_csv(data2, "cleaned_data.csv")
+```
+```{r}
+dim(data2)
+```
+
+```{r}
+# Convert GPA
+data2$grade = ifelse(data2$grade == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade == "Prefer not to say", NA, 1)
+                                                               ))))))))
+table(data2$grade)
+```
+
+```{r}
+# Convert GPA_P
+data2$grade_p = ifelse(data2$grade_p == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade_p == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade_p == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade_p == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade_p == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade_p == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade_p == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade_p == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade_p == "Prefer not to say", NA,
+                                                                             1)))))))))
+table(data2$grade_p)
+```
+
+```{r}
+# Convert GPA_baseline
+data2$grade_baseline = ifelse(data2$grade_baseline == "A(3.75-4.0)", 9,
+                     ifelse(data2$grade_baseline == "A-(3.5-3.75)", 8,
+                            ifelse(data2$grade_baseline == "B+(3.25-3.5)", 7,
+                                   ifelse(data2$grade_baseline == "B(3.0-3.25)", 6,
+                                          ifelse(data2$grade_baseline == "B-(2.75-3.0)", 5,
+                                                 ifelse(data2$grade_baseline == "C+(2.5-2.75)", 4,
+                                                        ifelse(data2$grade_baseline == "C(2.25-2.5)", 3,
+                                                               ifelse(data2$grade_baseline == "C-(2.0-2.25)", 2,
+                                                                      ifelse(data2$grade_baseline == "Prefer not to say", NA,
+                                                                             1)))))))))
+table(data2$grade_baseline)
+```
+```{r}
+data2$gender_p = ifelse(data2$gender_p == "Male", 1,
+                 ifelse(data2$gender_p == "Female", 0, NA))
+
+table(data2$gender_p)
+```
+
+```{r}
+data2$personality_baseline = ifelse(data2$personality_baseline == "Logical", 1,
+                             ifelse(data2$personality_baseline == "Emotional", 0, NA))
+
+table(data2$personality_baseline)
+```
+
+```{r}
+data2$personality_p = ifelse(data2$personality_p == "Logical", 1,
+                             ifelse(data2$personality_p == "Emotional", 0, NA))
+
+table(data2$personality_p)
+```
+
+```{r}
+data2$personality = ifelse(data2$personality == "Logical", 1,
+                             ifelse(data2$personality == "Emotional", 0, NA))
+
+table(data2$personality)
+```
+
+```{r}
+#save final cleaned version of data
+#write_csv(data2, "data2.csv")
+```
+
+```{r}
+analysis<-fread("data2.csv")
+```
+
+```{r}
+summary(analysis)
+```
+
+```{r}
+names(analysis)
+```
+
+```{r message=FALSE}
+qmplot(x = LocationLongitude, y = LocationLatitude, data = analysis, colour = 'blue', alpha=0.4,  size = 0.6, zoom=5) + 
+  theme(legend.position="")
+```
+
+```{r}
+analysis[, time_of_day := substr(RecordedDate, 12, 19)]
+analysis[, date := as_date(RecordedDate)]
+```
+
+```{r}
+ggplot(analysis, aes(x=factor(date)))+
+  geom_bar(aes(fill=Treatment))+
+  theme(panel.background = element_rect(fill="white"))
+```
+
+```{r}
+ggplot(analysis, aes(x=factor(grade), fill=Treatment))+
+  geom_bar(position = "dodge")+
+  theme(panel.background = element_rect(fill="white"))
+```
+
+##Randomization Check/Balance Check
+```{r}
+summary(lm(grade_baseline~Treatment, analysis))
+```
+Since the p-value is 0.9251 which is larger than 0.05, the R-square is -0.0048823 which is too small, so we fail to reject the null hypothesis, thus we think the ATE is 0, so we have 95% confidence that the glasses treatment on grade taken before the experiment started does not have effect. So this results indicate that the validity of the study's conclusion is high.   
+
+##Causal Effect 
+```{r}
+summary(lm(grade~Treatment, data=analysis))
+lowerci<-0.98829-1.96*0.16252
+lowerci
+upperci<-0.98829+1.96*0.16252
+upperci
+```
+The ATE of treatment on grade is **0.98829**, the 95% confidence interval is **[0.6697508, 1.3068292]**. 
+
+##Fixed Effect Check
+###Grade_Baseline
+```{r}
+summary(felm(grade~grade_baseline, data=analysis))
+```
+Since the p-value is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the baseline has effect for the grade, that's what we want to do baseline during our survey. Thus, it's a fixed effect in our result. 
+
+###Personal Gender
+```{r}
+with(analysis, table(gender_p, grade))
+```
+```{r}
+male_grade<-analysis[gender_p==1, grade]
+table(male_grade)
+female_grade<-analysis[gender_p==0, grade]
+table(female_grade)
+t.test(male_grade, female_grade)
+```
+With the t-test, since the p-value is 0.030423 which is less than 0.05, so we reject the null hypothesis, so we have 95% confidence that the gender of each subject has an effect on the grade. Thus, it's a fixed effect on our results.    
+
+###Personal Personality
+```{r}
+with(analysis, table(personality_p, grade))
+```
+```{r}
+logical_grade<-analysis[personality_p==1, grade]
+table(logical_grade)
+emotional_grade<-analysis[personality_p==0, grade]
+table(emotional_grade)
+t.test(logical_grade, emotional_grade)
+```
+With the t-test, since the p-value is 0.056235 which is larger than 0.05, so we fail to reject the null hypothesis, so we don’t have 95% confidence that the personality of each subject has an effect on the grade. Thus, it's not a fixed effect in our result.  
+
+###Class
+```{r}
+analysis$class_baseline<-factor(analysis$class_baseline, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p1<-ggplot(analysis, aes(x=class_baseline, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class<-factor(analysis$class, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD"))
+p2<-ggplot(analysis, aes(x=class, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+analysis$class_p<-factor(analysis$class_p, levels=c("Freshman", "Sophomore", "Junior", "Senior", "Graduates", "PhD", "Other"))
+p3<-ggplot(analysis, aes(x=class_p, fill=factor(Treatment)))+
+  geom_bar()+
+  theme(panel.background = element_rect(fill="white"))
+grid.arrange(p1,p2,p3, nrow=3, ncol=1)
+```
+While comparing the distributions of the class of photo A (baseline), photo B, the subject itself, we find that although most of the subjects are graduates, their judgment on photo B is still almost evenly distributed. Hence, we don’t believe that it's a fixed effect.  
+
+##Final Model
+```{r}
+summary(felm(grade~Treatment | grade_baseline + gender_p, data=analysis))
+```
+Based on our fixed effect check, we would like to estimate those fixed effects of grade_baseline and gender_p in our final regression to find the effect of classes for letter grade impression. There is a smaller p-value which is less than 0.05, so the treatment effect on glasses with fixed effects is statistically significant. Here, we could find after considering fixed effects, compared with the original causal effect model, this model has a smaller standard error, a larger adjusted R-squared. It’s more precise. Thus, we believe that the causal effect model with the fixed effect would be a better model.  
+
+##Limitation
+```{r}
+summary(felm(grade~Treatment+personality | grade_baseline + gender_p, data=analysis))
+```
+
+###############################################################################
+We have one optional question in the end of our survey to ask whether people can detect our purpose or not, and they can take a guess. We could try this if we have more time.  
+```{r}
+guess <- read_csv("glasses.csv")
+```
+```{r}
+names(guess)
+```
+```{r}
+names(guess)<-"purpose_guess"
+```
+
+
+
+
+

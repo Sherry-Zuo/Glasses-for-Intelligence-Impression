@@ -1,5 +1,5 @@
 ---
-title: "Glasses For Letter Grade Impression"
+title: "Glasses For Intelligence Impression"
 subtitle: BA830 - Fall 2019
 author: "team 7"
 date: "12/13/2019"
@@ -45,7 +45,7 @@ dim(smart)
 ```
 
 ```{r}
-head(smart, 2)
+#head(smart, 2)
 ```
 
 ```{r}
@@ -207,6 +207,17 @@ qmplot(x = LocationLongitude, y = LocationLatitude, data = analysis, colour = 'b
 ```
 
 ```{r}
+analysis[, time_of_day := substr(RecordedDate, 12, 19)]
+analysis[, date := as_date(RecordedDate)]
+```
+
+```{r}
+ggplot(analysis, aes(x=factor(date)))+
+  geom_bar(aes(fill=Treatment))+
+  theme(panel.background = element_rect(fill="white"))
+```
+
+```{r}
 ggplot(analysis, aes(x=factor(grade), fill=Treatment))+
   geom_bar(position = "dodge")+
   theme(panel.background = element_rect(fill="white"))
@@ -279,6 +290,7 @@ grid.arrange(p1,p2,p3, nrow=3, ncol=1)
 ```
 While comparing the distributions of the class of photo A (baseline), photo B, the subject itself, we find that although most of the subjects are graduates, their judgment on photo B is still almost evenly distributed. Hence, we don’t believe that it's a fixed effect.  
 
+##Final Model
 ```{r}
 summary(felm(grade~Treatment | grade_baseline + gender_p, data=analysis))
 ```
@@ -300,5 +312,8 @@ names(guess)
 ```{r}
 names(guess)<-"purpose_guess"
 ```
+
+
+
 
 
